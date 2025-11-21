@@ -1,0 +1,346 @@
+/* --- RESET & BASE --- */
+        :root {
+            --color-primary: #FF5226; /* The specific orange from the image */
+            --color-text-dark: #111827;
+            --color-text-light: #6B7280;
+            --color-white: #FFFFFF;
+            --color-bg-card: #F9FAFB; /* Very light gray for bottom cards */
+            --color-bg-body: #FFFFFF;
+            --font-family: 'Inter', sans-serif;
+            --transition-speed: 0.4s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-bg-body);
+            color: var(--color-text-dark);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- UTILITIES --- */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .fade-in {
+            animation: fadeIn var(--transition-speed) ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .stories-container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header__eyebrow {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-text-light);
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .section-header__title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--color-text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        /* --- GRID LAYOUT --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        /* --- TOP ROW: FEATURED & HERO IMAGE --- */
+        .grid-top-row {
+            grid-column: 1 / -1;
+            display: flex;
+            gap: 24px;
+            height: 500px; /* Fixed height for the hero section */
+        }
+
+        .featured-card {
+            flex: 0.8; /* Takes up about 40% */
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 16px;
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- SLIDER / HERO IMAGE CONTAINER --- */
+        .hero-image-container {
+            flex: 1.2; /* Takes up about 60% */
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #1F2937;
+        }
+
+        /* The Track that holds the 3 images */
+        .slider-track {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            /* We will move this track with JS transform */
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Individual slides */
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0; /* Prevents shrinking, each slide takes full width */
+        }
+
+        /* --- FEATURED CARD CONTENT --- */
+        .rating-stars {
+            display: flex;
+            gap: 4px;
+            color: #FDB022; /* Star yellow */
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+        }
+        
+        .featured-card .rating-stars {
+            color: rgba(255,255,255, 0.9); /* Lighter stars on orange */
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            font-weight: 500;
+            margin-bottom: auto; /* Push content down */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .author-block {
+            display: flex;
+            flex-direction: column;
+            margin-top: 32px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .author-name {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 4px;
+        }
+
+        .author-role {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .slider-index {
+            position: absolute;
+            bottom: 48px;
+            right: 48px;
+            font-family: monospace;
+            font-size: 1.125rem;
+            opacity: 0.8;
+        }
+
+        /* --- HERO CONTROLS --- */
+        .slider-controls {
+            position: absolute;
+            bottom: 32px;
+            right: 32px;
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .control-btn i {
+            font-size: 1.25rem;
+        }
+
+        /* --- BOTTOM ROW CARDS --- */
+        .review-card {
+            background-color: var(--color-bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.05);
+        }
+
+        .review-card .quote-text {
+            font-size: 1.125rem;
+            color: var(--color-text-dark);
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        .review-card .rating-stars {
+            color: var(--color-primary);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: auto;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-author-info .name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-text-dark);
+        }
+
+        .review-author-info .role {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* --- FOOTER --- */
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            padding-top: 20px;
+        }
+
+        .avatar-group {
+            display: flex;
+            margin-right: 8px;
+        }
+
+        .mini-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -12px;
+            object-fit: cover;
+        }
+
+        .mini-avatar:first-child {
+            margin-left: 0;
+        }
+
+        .happy-clients-text {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+        
+        .count-number {
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-top-row {
+                flex-direction: column;
+                height: auto;
+            }
+            .featured-card, .hero-image-container {
+                flex: none;
+                width: 100%;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-header__title {
+                font-size: 2.25rem;
+            }
+        }

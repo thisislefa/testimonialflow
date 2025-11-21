@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="stories-container">
+        
+        <!-- Header -->
+        <header class="section-header">
+            <span class="section-header__eyebrow">Testimonials</span>
+            <h1 class="section-header__title">Stories from our clients</h1>
+        </header>
+
+        <!-- Grid -->
+        <main class="testimonials-grid">
+            
+            <!-- Top Row (Featured + Slider) -->
+            <div class="grid-top-row">
+                
+                <!-- Featured Card (Orange) -->
+                <article class="featured-card" id="featured-card">
+                    <div class="rating-stars">
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                        <i class="ph-fill ph-star"></i>
+                    </div>
+                    
+                    <p class="quote-text fade-in" id="featured-quote">
+                        "Working with Forma Studio has completely transformed our online presence. From the very beginning, their team took the time to understand our brand."
+                    </p>
+                    
+                    <div class="author-block fade-in" id="featured-author">
+                        <span class="author-name">Elena M.</span>
+                        <span class="author-role">Marketing Director at Green Leaf</span>
+                    </div>
+
+                    <span class="slider-index" id="slider-index">[01]</span>
+                </article>
+
+                <!-- Image Slider with 3 Images -->
+                <figure class="hero-image-container">
+                    <div class="slider-track" id="slider-track">
+                        <!-- Slide 1 -->
+                        <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client Portrait 1" class="slider-image">
+                        <!-- Slide 2 -->
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2670&auto=format&fit=crop" alt="Client Portrait 2" class="slider-image">
+                        <!-- Slide 3 -->
+                        <img src="https://images.unsplash.com/photo-1509461641751-ed8c60422376?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Client Portrait 3" class="slider-image">
+                    </div>
+                    
+                    <nav class="slider-controls">
+                        <button class="control-btn" id="prev-btn" aria-label="Previous testimonial">
+                            <i class="ph ph-arrow-left"></i>
+                        </button>
+                        <button class="control-btn" id="next-btn" aria-label="Next testimonial">
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </nav>
+                </figure>
+
+            </div>
+
+            <!-- Bottom Row Cards -->
+            <article class="review-card">
+                <div class="rating-stars">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star-half"></i>
+                </div>
+                <p class="quote-text">"Forma Studio brought our vision to life with precision and creativity. Their work truly speaks for itself."</p>
+                <div class="review-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="James K." class="author-avatar">
+                    <div class="review-author-info">
+                        <span class="name">James K.</span>
+                        <span class="role">Founder of Urbangear</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="rating-stars">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                </div>
+                <p class="quote-text">"Professional, responsive, and genuinely passionate about what they do. We saw results within the first month."</p>
+                <div class="review-author">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="Jamamira T." class="author-avatar">
+                    <div class="review-author-info">
+                        <span class="name">Jamamira T.</span>
+                        <span class="role">CEO of Bloom Concept</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <div class="rating-stars">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                </div>
+                <p class="quote-text">"From the first call, we knew we were in good hands. Forma Studio delivered beyond expectations."</p>
+                <div class="review-author">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Luis R." class="author-avatar">
+                    <div class="review-author-info">
+                        <span class="name">Luis R.</span>
+                        <span class="role">Product Manager at Heliotech</span>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Footer Social Proof -->
+        <footer class="social-proof">
+            <div class="avatar-group">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64" class="mini-avatar" alt="">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64" class="mini-avatar" alt="">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=64" class="mini-avatar" alt="">
+            </div>
+            <div class="rating-stars" style="font-size: 0.8rem; margin-bottom: 0; color: #FDB022; margin-right: 8px;">
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+                <i class="ph-fill ph-star"></i>
+            </div>
+            <span class="happy-clients-text"><span class="count-number" id="client-counter">0</span>+ happy clients</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
